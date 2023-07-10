@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class UserMainCode {
+    public int addLastDigits(int input1, int input2) {
+        int lastDigit1 = input1 % 10;
+        int lastDigit2 = input2 % 10;
+        return lastDigit1 + lastDigit2;
+    }
+
+    public static void main(String[] args) {
+        UserMainCode code = new UserMainCode();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first integer: ");
+        int input1 = scanner.nextInt();
+
+        System.out.print("Enter the second integer: ");
+        int input2 = scanner.nextInt();
+
+        int sumOfLastDigits = code.addLastDigits(input1, input2);
+        System.out.println("Sum of last digits: " + sumOfLastDigits);
+    }
+}
