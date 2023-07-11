@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class UserMainCode {
+    public int isMultiple(int input1, int input2) {
+        if (input2 == 0) {
+            return 0;
+        } else if (input1 % input2 == 0) {
+            return 2;
+        } else {
+            return 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        UserMainCode code = new UserMainCode();
+        int result = code.isMultiple(10, 5);
+        System.out.println(result);
+    }
+}

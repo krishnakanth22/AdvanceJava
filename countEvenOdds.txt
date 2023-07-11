@@ -1,0 +1,48 @@
+import java.util.*;
+
+// Read only region start 
+class UserMainCode {
+    public int countEvensOdds(Object input1, Object input2, Object input3, Object input4, Object input5, String input6) {
+        int count = 0;
+        if (input6.equalsIgnoreCase("evens")) {
+            if (isEven(input1))
+                count++;
+            if (isEven(input2))
+                count++;
+            if (isEven(input3))
+                count++;
+            if (isEven(input4))
+                count++;
+            if (isEven(input5))
+                count++;
+        } else if (input6.equalsIgnoreCase("odds")) {
+            if (!isEven(input1))
+                count++;
+            if (!isEven(input2))
+                count++;
+            if (!isEven(input3))
+                count++;
+            if (!isEven(input4))
+                count++;
+            if (!isEven(input5))
+                count++;
+        } else {
+            throw new IllegalArgumentException("Invalid input. Only 'evens' or 'odds' are allowed.");
+        }
+        return count;
+    }
+
+    private boolean isEven(Object input) {
+        if (input instanceof Integer) {
+            return ((Integer) input) % 2 == 0;
+        } else if (input instanceof Long) {
+            return ((Long) input) % 2 == 0;
+        } else if (input instanceof Double) {
+            return ((Double) input) % 2 == 0;
+        } else if (input instanceof Float) {
+            return ((Float) input) % 2 == 0;
+        } else {
+            throw new IllegalArgumentException("Unsupported data type. Only numeric types are allowed.");
+        }
+    }
+}
